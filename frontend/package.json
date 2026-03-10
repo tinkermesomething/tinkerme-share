@@ -1,6 +1,6 @@
 {
   "name": "tinkerme-share-frontend",
-  "version": "1.15.1",
+  "version": "1.15.2",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

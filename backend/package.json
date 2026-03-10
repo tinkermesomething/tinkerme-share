@@ -1,6 +1,6 @@
 {
   "name": "tinkerme-share-backend",
-  "version": "1.15.1",
+  "version": "1.15.2",
   "scripts": {
     "build": "nest build",
     "dev": "cross-env NODE_ENV=development nest start --watch",
@@ -38,6 +38,7 @@
     "class-validator": "^0.14.1",
     "content-disposition": "^0.5.4",
     "cookie-parser": "^1.4.7",
+    "file-type": "^20.5.0",
     "jmespath": "^0.16.0",
     "ldapts": "^7.4.0",
     "mime-types": "^3.0.1",
