@@ -3,14 +3,16 @@ import {
   Col,
   createStyles,
   Grid,
+  Group,
   Paper,
   Stack,
   Text,
   Title,
+  ThemeIcon,
 } from "@mantine/core";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { TbLink, TbRefresh, TbSettings, TbUsers } from "react-icons/tb";
+import { TbLink, TbCircleCheck, TbAlertCircle, TbSettings, TbUsers } from "react-icons/tb";
 import { FormattedMessage } from "react-intl";
 import Meta from "../../components/Meta";
 import useTranslate from "../../hooks/useTranslate.hook";
@@ -34,8 +36,9 @@ const useStyles = createStyles((theme) => ({
 const Admin = () => {
   const { classes, theme } = useStyles();
   const t = useTranslate();
+  const [updateAvailable, setUpdateAvailable] = useState<boolean | null>(null);
 
-  const [managementOptions, setManagementOptions] = useState([
+  const managementOptions = [
     {
       title: t("admin.button.users"),
       icon: TbUsers,
@@ -51,25 +54,17 @@ const Admin = () => {
       icon: TbSettings,
       route: "/admin/config/general",
     },
-  ]);
+  ];
 
   useEffect(() => {
     configService
       .isNewReleaseAvailable()
       .then((isNewReleaseAvailable) => {
-        if (isNewReleaseAvailable) {
-          setManagementOptions([
-            ...managementOptions,
-            {
-              title: "Update",
-              icon: TbRefresh,
-              route:
-                "https://github.com/stonith404/pingvin-share/releases/latest",
-            },
-          ]);
-        }
+        setUpdateAvailable(isNewReleaseAvailable);
       })
-      .catch();
+      .catch(() => {
+        setUpdateAvailable(null);
+      });
   }, []);
 
   return (
@@ -101,9 +96,28 @@ const Admin = () => {
         </Paper>
 
         <Center>
-          <Text size="xs" color="dimmed">
-            <FormattedMessage id="admin.version" /> {process.env.VERSION}
-          </Text>
+          <Group spacing="xs">
+            {updateAvailable !== null && (
+              <ThemeIcon
+                size="sm"
+                variant="light"
+                color={updateAvailable ? "red" : "green"}
+                radius="xl"
+              >
+                {updateAvailable ? (
+                  <TbAlertCircle size={14} />
+                ) : (
+                  <TbCircleCheck size={14} />
+                )}
+              </ThemeIcon>
+            )}
+            <Text size="xs" color="dimmed">
+              <FormattedMessage id="admin.version" /> {process.env.VERSION}
+              {updateAvailable !== null && (
+                <> - {updateAvailable ? t("admin.update-available") : t("admin.up-to-date")}</>
+              )}
+            </Text>
+          </Group>
         </Center>
       </Stack>
     </>

@@ -1,7 +1,3 @@
-_Read this in another language: [Spanish](/docs/CONTRIBUTING.es.md), [English](/CONTRIBUTING.md), [Simplified Chinese](/docs/CONTRIBUTING.zh-cn.md)_
-
----
-
 # Contributing
 
 We would ❤️ for you to contribute to Tinkerme Share and help make it better! All contributions are welcome, including issues, suggestions, pull requests and more.
@@ -42,7 +38,7 @@ Before you submit the pull request for review please ensure that
 2. Clone your fork to your machine with `git clone`
 
 ```
-$ git clone https://github.com/[your_username]/pingvin-share
+$ git clone https://github.com/[your_username]/tinkerme-share
 ```
 
 3. Work - commit - repeat

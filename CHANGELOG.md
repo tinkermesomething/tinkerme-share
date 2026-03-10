@@ -1,3 +1,33 @@
+## [1.15.0](https://github.com/tinkermesomething/tinkerme-share/compare/v1.14.0...v1.15.0) (2026-01-19)
+
+> **Note:** This release marks the rebrand from Pingvin Share to Tinkerme Share. This is an actively maintained fork of the original [stonith404/pingvin-share](https://github.com/stonith404/pingvin-share), which was archived.
+
+### Breaking Changes
+
+* **rebrand:** renamed project from pingvin-share to tinkerme-share
+* **docker:** image changed from `stonith404/pingvin-share` to `tinkermesomething/tinkerme-share`
+* **docker:** GHCR image changed from `ghcr.io/stonith404/pingvin-share` to `ghcr.io/tinkermesomething/tinkerme-share`
+* **database:** default database filename changed from `pingvin-share.db` to `tinkerme-share.db`
+
+### Migration
+
+Existing users: rename your database file or set `DATABASE_URL` env var. See [MIGRATING.md](./MIGRATING.md).
+
+## [1.14.0](https://github.com/tinkermesomething/tinkerme-share/compare/v1.13.0...v1.14.0) (2026-01-18)
+
+
+### Security Fixes
+
+* **frontend:** fix CVEs in Next.js, axios, tar, form-data
+* **backend:** fix CVEs in nodemailer (DoS/injection), body-parser, axios, jws
+* **backend:** add file name sanitization to prevent path traversal in S3 storage
+* **backend:** harden OAuth state cookie with httpOnly flag
+
+
+### Bug Fixes
+
+* **backend:** fix logo upload FileTypeValidator regex for PNG files
+
 ## [1.13.0](https://github.com/stonith404/pingvin-share/compare/v1.12.0...v1.13.0) (2025-05-25)
 
 

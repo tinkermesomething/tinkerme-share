@@ -9,7 +9,31 @@ services:
     volumes:
       - "./data:/opt/app/backend/data"
       - "./data/images:/opt/app/frontend/public/img"
-  #      - "./config.yaml:/opt/app/config.yaml" # Add this line, if you want to configure tinkerme-share via config file and not via UI
+#      - "./config.yaml:/opt/app/config.yaml" # Uncomment to use config file instead of UI
 
-  # To add ClamAV, to scan your shares for malicious files,
-  # Originally from stonith404/pingvin-share - see https://stonith404.github.io/pingvin-share/setup/integrations/#clamav-docker-only
+  #############################################################################
+  # OPTIONAL: ClamAV - Malware scanning for uploaded files
+  #############################################################################
+  # Uncomment the section below to enable automatic malware scanning.
+  # ClamAV will scan all uploaded files and remove infected shares.
+  #
+  # IMPORTANT: ClamAV requires 1-4GB RAM. First startup takes several minutes
+  # while virus definitions are downloaded.
+  #
+  # To enable:
+  # 1. Uncomment the clamav service below
+  # 2. Uncomment the depends_on block in tinkerme-share above
+  #############################################################################
+
+#    depends_on:
+#      clamav:
+#        condition: service_healthy
+
+#  clamav:
+#    image: clamav/clamav
+#    restart: unless-stopped
+#    # Uncomment to limit memory usage (minimum 1GB recommended)
+#    # deploy:
+#    #   resources:
+#    #     limits:
+#    #       memory: 2G
