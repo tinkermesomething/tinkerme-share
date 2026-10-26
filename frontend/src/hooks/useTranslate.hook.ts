@@ -9,7 +9,8 @@ const useTranslate = () => {
     values?: Parameters<typeof intl.formatMessage>[1],
     opts?: Parameters<typeof intl.formatMessage>[2],
   ) => {
-    return intl.formatMessage({ id }, values, opts) as string;
+    // react-intl >=6.8 types the result as string | ReactNode[]; it is a string without rich-text values.
+    return intl.formatMessage({ id }, values, opts) as unknown as string;
   };
 };
 
@@ -32,7 +33,8 @@ export const translateOutsideContext = () => {
     values?: Parameters<typeof intl.formatMessage>[1],
     opts?: Parameters<typeof intl.formatMessage>[2],
   ) => {
-    return intl.formatMessage({ id }, values, opts) as string;
+    // react-intl >=6.8 types the result as string | ReactNode[]; it is a string without rich-text values.
+    return intl.formatMessage({ id }, values, opts) as unknown as string;
   };
 };
 
