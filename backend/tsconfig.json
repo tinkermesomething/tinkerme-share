@@ -13,6 +13,9 @@
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
+    "paths": {
+      "sharp": ["node_modules/sharp/dist/index.d.cts"]
+    },
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": false,
