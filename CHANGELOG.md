@@ -1,3 +1,23 @@
+## [1.16.0](https://github.com/tinkermesomething/tinkerme-share/compare/v1.15.3...v1.16.0) (2026-10-26)
+
+### Security
+
+* **frontend:** upgrade Next.js 14 to 15.5.28 (14 is end-of-life; fixes critical image-optimizer RCE and other advisories)
+* **backend:** upgrade `sharp` 0.35, `nodemailer` 10, `file-type` 21
+* **deps:** override `multer`, `lodash`, `qs`, `js-yaml`, `uuid`, `postcss`, `serialize-javascript` to patched versions
+* `npm audit` is clean for all production dependencies
+
+### CI
+
+* add Docker build check on pull requests
+* add Dependabot (weekly, minor/patch grouped)
+
+## [1.16.0](https://github.com/tinkermesomething/tinkerme-share/compare/v1.15.3...v1.16.0) (2026-10-26)
+
+### Bug Fixes
+
+* **backend:** resolve dependency CVEs ([27a2b4c](https://github.com/tinkermesomething/tinkerme-share/commit/27a2b4c833a5a865182b7f406b39257754749c38))
+* **frontend:** upgrade Next 14 to 15.5.28, resolve dependency CVEs ([bdcb525](https://github.com/tinkermesomething/tinkerme-share/commit/bdcb5257f874775733b8ddc0ee57cfb6df2da342))
 ## [1.15.0](https://github.com/tinkermesomething/tinkerme-share/compare/v1.14.0...v1.15.0) (2026-01-19)
 
 > **Note:** This release marks the rebrand from Pingvin Share to Tinkerme Share. This is an actively maintained fork of the original [stonith404/pingvin-share](https://github.com/stonith404/pingvin-share), which was archived.
