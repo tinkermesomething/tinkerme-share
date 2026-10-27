@@ -1,3 +1,23 @@
+## [1.16.1](https://github.com/tinkermesomething/tinkerme-share/compare/v1.16.0...v1.16.1) (2026-10-27)
+
+### Security
+
+* **backend:** override `deepmerge-ts` to 8 (Prisma CLI advisory); `npm audit` clean for production dependencies
+
+### Dependencies
+
+* update 44 minor/patch dependencies across backend and frontend
+* **frontend:** `FaMicrosoft` replaces `SiMicrosoft` (removed in react-icons 5.7)
+* **frontend:** `formatMessage` cast compatible with react-intl 6.8
+* **ci:** GitHub Actions bumped to current majors
+
+## [1.16.1](https://github.com/tinkermesomething/tinkerme-share/compare/v1.16.0...v1.16.1) (2026-10-27)
+
+### Bug Fixes
+
+* **backend:** override deepmerge-ts to 8 (Prisma CLI advisory) ([eddae4c](https://github.com/tinkermesomething/tinkerme-share/commit/eddae4cdd2ed9e5796380177a47a46447ef1d32c))
+* **frontend:** make formatMessage cast compatible with react-intl 6.8 ([9b896ec](https://github.com/tinkermesomething/tinkerme-share/commit/9b896ec7c09faf97a9f8662ea6f58e1175154e92))
+* **frontend:** use FaMicrosoft, SiMicrosoft removed in react-icons 5.7 ([2a702d7](https://github.com/tinkermesomething/tinkerme-share/commit/2a702d72c1dfbe4a2ce55de35be330cf7c1c875b))
 ## [1.16.0](https://github.com/tinkermesomething/tinkerme-share/compare/v1.15.3...v1.16.0) (2026-10-26)
 
 ### Security
